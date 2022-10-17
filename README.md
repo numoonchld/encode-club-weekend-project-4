@@ -43,3 +43,8 @@ git submodule update --remote <sub-module-name>
 ```
 
 - after running above command, commit this parent repo and push it to remote
+- if the above throws an error, run the following
+
+```bash
+git pull --recurse-submodules
+```

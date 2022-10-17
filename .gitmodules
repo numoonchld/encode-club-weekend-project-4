@@ -4,3 +4,6 @@
 [submodule "encode-club-weekend-project-4-db"]
 	path = encode-club-weekend-project-4-db
 	url = https://github.com/numoonchld/encode-club-weekend-project-4-db
+[submodule "encode-club-weekend-project-4-client"]
+	path = encode-club-weekend-project-4-client
+	url = https://github.com/numoonchld/encode-club-weekend-project-4-client.git
