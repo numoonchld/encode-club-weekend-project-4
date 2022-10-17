@@ -1,0 +1,28 @@
+services:
+  server_env:
+    build: ./encode-club-weekend-project-4-server
+    container_name: nest-docker
+    ports:
+      - 3000:3000
+    volumes:
+      - ./server:/home/app
+    depends_on: 
+      - mongo_db
+  client_env:
+    build: ./encode-club-weekend-project-4-client
+    container_name: angular-docker
+    ports: 
+      - 4200:4200
+    volumes: 
+      - ./client:/home/app
+  mongo_db:
+    build: ./encode-club-weekend-project-4-db
+    container_name: mongo-docker
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - 27017:27017
+    volumes: # https://stackoverflow.com/a/44358783
+      - ./encode-club-weekend-project-4-db/db-raw:/data/db
